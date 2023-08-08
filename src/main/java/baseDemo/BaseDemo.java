@@ -1,7 +1,6 @@
 package baseDemo;
 
 import cn.hutool.core.util.ReUtil;
-import cn.hutool.core.util.StrUtil;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
@@ -11,7 +10,7 @@ import java.util.List;
 
 /**
  * 基本Demo
- * 实现PageProcessor
+ * 实现PageProcessor，注解方式不好用放弃它了
  */
 public class BaseDemo implements PageProcessor {
     // 部分一：抓取网站的相关配置，包括编码、抓取间隔、重试次数等
@@ -23,7 +22,7 @@ public class BaseDemo implements PageProcessor {
         Html html = page.getHtml();
         String url = page.getUrl().get();
 
-        String gameId = ReUtil.get("gl(\\d*)", url, 0);
+        String gameId = ReUtil.get("gl(\\d*)", url, 1);
         // 部分二：定义如何抽取页面信息，并保存下来
         if (!"gl".equals(gameId)) {
             page.putField("gameid", gameId);

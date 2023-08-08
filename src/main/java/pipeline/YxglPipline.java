@@ -1,4 +1,4 @@
-package baseDemo;
+package pipeline;
 
 import cn.hutool.core.util.StrUtil;
 import us.codecraft.webmagic.ResultItems;
@@ -9,7 +9,7 @@ import utils.DbUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BaseDemoPipline implements Pipeline {
+public class YxglPipline implements Pipeline {
 
     @Override
     public void process(ResultItems resultItems, Task task) {
